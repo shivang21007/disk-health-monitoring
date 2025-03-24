@@ -1,0 +1,63 @@
+{
+    "server_name": "example_server",
+    "disks": ["/dev/sda", "/dev/sdb", "/dev/sdc"],
+    "output_dir": "/var/log/smart_reports",
+    "metric_map": {
+        "RPM": "RPM",
+        "Capacity": "Capacity",
+        "Reallocated_Sector_Ct": "5",
+        "Raw_Read_Error_Rate": "1",
+        "Start_Stop_Count": "4",
+        "Power_On_Hours": "9",
+        "Power_Cycle_Count": "12",
+        "Seek_Error_Rate": "7",
+        "Airflow_Temperature_Cel": "190",
+        "G-Sense_Error_Rate": "191",
+        "Power-Off_Retract_Count": "192",
+        "Load_Cycle_Count": "193",
+        "Head_Flying_Hours": "240",
+        "Total_LBAs_Written": "241",
+        "Total_LBAs_Read": "242"
+    },
+    "healthy_benchmarks": {
+        "Overall SMART Health": "PASSED",
+        "Model": "As specified by vendor",
+        "RPM": "As specified by vendor",
+        "Capacity": "As specified by vendor",
+        "Reallocated_Sector_Ct": "0",
+        "Raw_Read_Error_Rate": "Low (vendor-specific)",
+        "Start_Stop_Count": "<50",
+        "Power_On_Hours": "Usage dependent (lower generally indicates newer)",
+        "Power_Cycle_Count": "<50",
+        "Seek_Error_Rate": "Stable (vendor-specific)",
+        "Airflow_Temperature_Cel": "20-30°C",
+        "G-Sense_Error_Rate": "0 or minimal",
+        "Power-Off_Retract_Count": "Should be low",
+        "Load_Cycle_Count": "Usage dependent",
+        "Head_Flying_Hours": "Usage dependent",
+        "Total_LBAs_Written": "Usage dependent (in GB)",
+        "Total_LBAs_Read": "Usage dependent (in GB)"
+    },
+    "email_notification": true,
+    "email_recipients": ["your.email@example.com"],
+    "email_config": {
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "sender_email": "your.email@gmail.com",
+        "app_password": "your_app_password_here",
+        "use_tls": true
+    },
+    "alert_thresholds": {
+        "Airflow_Temperature_Cel": 45.0,
+        "Reallocated_Sector_Ct": 100.0,
+        "Raw_Read_Error_Rate": 1000000.0,
+        "Seek_Error_Rate": 1000000.0,
+        "Start_Stop_Count": 50000,
+        "Power_On_Hours": 60000,
+        "Power_Cycle_Count": 500,
+        "G-Sense_Error_Rate": 1000000.0,
+        "Power-Off_Retract_Count": 1500,
+        "Load_Cycle_Count": 300000,
+        "Head_Flying_Hours": 60000
+    }
+} 
